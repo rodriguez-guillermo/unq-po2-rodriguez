@@ -17,6 +17,7 @@ public class Empresa {
 		this.empleados = empleados;
 	}
 	
+	//Métodos
 	public void calcularTotalSueldosNetos() {
 		//TODO
 	}

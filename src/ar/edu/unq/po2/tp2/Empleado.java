@@ -23,9 +23,19 @@ public abstract class Empleado {
 		this.sueldoBasico = sueldoBasico;
 	}
 	
+	//Getter sueldoBasico
+	public Double getSueldoBasico() {
+		return sueldoBasico;
+	}
+
 	//Getter fechaDeNacimiento
 	public LocalDate getFechaDeNacimiento() {
 		return fechaDeNacimiento;
+	}
+	
+	//Getter estadoCivil
+	public String getEstadoCivil() {
+		return estadoCivil;
 	}
 	
 	//Métodos
@@ -37,7 +47,10 @@ public abstract class Empleado {
 	
 	public abstract Double calcularSueldoBruto();
 	
-	public abstract Double calcularRetenciones();
+	public Double calcularRetenciones() {
+		
+		return this.calcularObraSocial() + this.calcularAportesJubilatorios();
+	};
 	
 	public abstract Double calcularObraSocial();
 	
