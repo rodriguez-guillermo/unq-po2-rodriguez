@@ -1,5 +1,7 @@
 package ar.edu.unq.po2.tp2;
 
+import java.time.LocalDate;
+import java.util.Iterator;
 import java.util.List;
 
 public class Empresa {
@@ -17,20 +19,51 @@ public class Empresa {
 		this.empleados = empleados;
 	}
 	
+	//getter empleados
+	public List<Empleado> getEmpleados() {
+		return empleados;
+	}
+	
+	//setter empleados
+	public void setEmpleados(List<Empleado> empleados) {
+		this.empleados = empleados;
+	}
+	
 	//Métodos
-	public void calcularTotalSueldosNetos() {
-		//TODO
+	public Double calcularTotalSueldosNetos() {
+		
+		double montoSueldosNetos = 0;
+		for(Empleado empleadoAObtenerNeto : this.getEmpleados()) {
+			montoSueldosNetos += empleadoAObtenerNeto.calcularSueldoNeto();
+		}
+		return montoSueldosNetos;
 	}
 	
-	public void calcularTotalSueldosBrutos() {
-		//TODO
+	public Double calcularTotalSueldosBrutos() {
+	
+		double montoSueldosBrutos = 0;
+		for(Empleado empleadoAObtenerBruto : this.getEmpleados()) {
+			montoSueldosBrutos += empleadoAObtenerBruto.calcularSueldoBruto();
+		}
+		return montoSueldosBrutos;
 	}
 	
-	public void calcularTotalRetenciones() {
-		//TODO
+	public Double calcularTotalRetenciones() {
+		
+		double montoRetenciones = 0;
+		for(Empleado empleadoAObtenerRetencion : this.getEmpleados()) {
+			montoRetenciones += empleadoAObtenerRetencion.calcularRetenciones();
+		}
+		return montoRetenciones;
 	}
 	
 	public void liquidarSueldos() {
 		//TODO
 	}
+	
+	public void agregarEmpleadoALaEmpresa(Empleado empleadoAAgregar) {
+		
+		this.getEmpleados().add(empleadoAAgregar);
+	}
+	
 }

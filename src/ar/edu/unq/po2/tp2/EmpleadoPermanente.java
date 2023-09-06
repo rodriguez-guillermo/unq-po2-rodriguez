@@ -76,4 +76,5 @@ public class EmpleadoPermanente extends Empleado {
 		
 		return this.getAntiguedad() * 50;
 	}
+	
 }

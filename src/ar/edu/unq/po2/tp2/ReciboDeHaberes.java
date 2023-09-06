@@ -12,6 +12,7 @@ public class ReciboDeHaberes {
 	private Double sueldoNeto;
 	private Double sueldoBruto;
 	private List<String> desgloceDeConceptos;
+	private List<ReciboDeHaberes> recibos;
 	
 	//Constructor
 	public ReciboDeHaberes(String nombreDelEmpleado, String direccion, LocalDate fechaDeEmision, Double sueldoNeto,
@@ -24,4 +25,31 @@ public class ReciboDeHaberes {
 		this.sueldoBruto = sueldoBruto;
 		this.desgloceDeConceptos = desgloceDeConceptos;
 	}
+	
+	//Getters
+	public String getNombreDelEmpleado() {
+		return nombreDelEmpleado;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public LocalDate getFechaDeEmision() {
+		return fechaDeEmision;
+	}
+
+	public Double getSueldoNeto() {
+		return sueldoNeto;
+	}
+
+	public Double getSueldoBruto() {
+		return sueldoBruto;
+	}
+	
+	public List<String> getDesgloceDeConceptos() {
+		return desgloceDeConceptos;
+	}
+	
+	
 }

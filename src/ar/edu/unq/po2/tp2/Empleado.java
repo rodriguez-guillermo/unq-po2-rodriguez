@@ -60,5 +60,6 @@ public abstract class Empleado {
 		
 		return this.calcularSueldoBruto() - this.calcularRetenciones();
 	}
+
 	
 }
