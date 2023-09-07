@@ -1,6 +1,7 @@
 package ar.edu.unq.po2.tp2;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -9,10 +10,11 @@ public class Empresa {
 	//Atributos
 	private String nombre;
 	private String cuit;
-	private List<Empleado> empleados;
+	private ArrayList<Empleado> empleados = new ArrayList<Empleado>();
+	private ArrayList<ReciboDeHaberes> recibos = new ArrayList<ReciboDeHaberes>();
 	
 	//Constructor
-	public Empresa(String nombre, String cuit, List<Empleado> empleados) {
+	public Empresa(String nombre, String cuit, ArrayList<Empleado> empleados) {
 		super();
 		this.nombre = nombre;
 		this.cuit = cuit;
@@ -20,16 +22,28 @@ public class Empresa {
 	}
 	
 	//getter empleados
-	public List<Empleado> getEmpleados() {
+	public ArrayList<Empleado> getEmpleados() {
 		return empleados;
 	}
 	
 	//setter empleados
-	public void setEmpleados(List<Empleado> empleados) {
+	public void setEmpleados(ArrayList<Empleado> empleados) {
 		this.empleados = empleados;
 	}
 	
+	public ArrayList<ReciboDeHaberes> getRecibos() {
+		return recibos;
+	}
+
+	public void setRecibos(ArrayList<ReciboDeHaberes> recibos) {
+		this.recibos = recibos;
+	}
+	
 	//Métodos
+	public void agregarEmpleadoALaEmpresa(Empleado empleadoAAgregar) {
+		
+		this.getEmpleados().add(empleadoAAgregar);
+	}
 	public Double calcularTotalSueldosNetos() {
 		
 		double montoSueldosNetos = 0;
@@ -58,12 +72,15 @@ public class Empresa {
 	}
 	
 	public void liquidarSueldos() {
-		//TODO
-	}
-	
-	public void agregarEmpleadoALaEmpresa(Empleado empleadoAAgregar) {
 		
-		this.getEmpleados().add(empleadoAAgregar);
+		for(Empleado empleado : this.getEmpleados()) {
+			this.generarReciboDel(empleado);
+		}
 	}
-	
+
+	public void generarReciboDel(Empleado empleado) {
+
+		ReciboDeHaberes recibo = new ReciboDeHaberes(empleado.getNombre(), empleado.getDireccion(), LocalDate.now(), empleado.calcularSueldoNeto(), empleado.calcularSueldoBruto()); 
+		this.getRecibos().add(recibo);
+	}
 }

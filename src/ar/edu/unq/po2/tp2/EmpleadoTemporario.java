@@ -58,5 +58,4 @@ public class EmpleadoTemporario extends Empleado {
 		return (this.calcularSueldoBruto() * 0.1) + this.getCantidadHorasExtras() * 5; 
 	}
 	
-	
 }
