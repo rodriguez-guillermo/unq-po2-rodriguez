@@ -2,8 +2,6 @@ package ar.edu.unq.po2.tp2;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class Empresa {
 	

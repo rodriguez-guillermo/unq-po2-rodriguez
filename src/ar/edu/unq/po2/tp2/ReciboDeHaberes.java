@@ -1,7 +1,6 @@
 package ar.edu.unq.po2.tp2;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class ReciboDeHaberes {
 	

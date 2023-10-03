@@ -11,8 +11,6 @@ import java.util.stream.Collectors;
 import org.junit.Before;
 import org.junit.Test;
 
-import unq.collections.Employee;
-
 
 /**
  * Clase de test que ejercita una colecci�n de tipo java.util.ArrayList
